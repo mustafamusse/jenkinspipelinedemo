@@ -18,7 +18,7 @@ pipeline {
                 sh 'python -m py_compile simple-python-pyinstaller-app/sources/add2vals.py simple-python-pyinstaller-app/sources/calc.py'
                 //This stash step saves the Python source code and compiled byte code files from the sources
                 //workspace directory for use in later stages.
-                stash(name: 'compiled-results', includes: 'sources/*.py*')
+                stash(name: 'compiled-results', includes: 'simple-python-pyinstaller-app/sources/*.py*')
             }
         }
         stage('Test') {
